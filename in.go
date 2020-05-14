@@ -50,6 +50,12 @@ func (r InRule) Error(message string) InRule {
 	return r
 }
 
+// Error sets the error code for the rule.
+func (r InRule) ErrorCode(code string) InRule {
+	r.err = r.err.SetCode(code)
+	return r
+}
+
 // ErrorObject sets the error struct for the rule.
 func (r InRule) ErrorObject(err Error) InRule {
 	r.err = err

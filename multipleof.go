@@ -29,6 +29,12 @@ func (r MultipleOfRule) Error(message string) MultipleOfRule {
 	return r
 }
 
+// Error sets the error code for the rule.
+func (r MultipleOfRule) ErrorCode(code string) MultipleOfRule {
+	r.err = r.err.SetCode(code)
+	return r
+}
+
 // ErrorObject sets the error struct for the rule.
 func (r MultipleOfRule) ErrorObject(err Error) MultipleOfRule {
 	r.err = err

@@ -44,6 +44,12 @@ func (r NotInRule) Error(message string) NotInRule {
 	return r
 }
 
+// Error sets the error code for the rule.
+func (r NotInRule) ErrorCode(code string) NotInRule {
+	r.err = r.err.SetCode(code)
+	return r
+}
+
 // ErrorObject sets the error struct for the rule.
 func (r NotInRule) ErrorObject(err Error) NotInRule {
 	r.err = err

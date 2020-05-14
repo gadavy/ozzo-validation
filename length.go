@@ -79,6 +79,12 @@ func (r LengthRule) Error(message string) LengthRule {
 	return r
 }
 
+// Error sets the error code for the rule.
+func (r LengthRule) ErrorCode(code string) LengthRule {
+	r.err = r.err.SetCode(code)
+	return r
+}
+
 // ErrorObject sets the error struct for the rule.
 func (r LengthRule) ErrorObject(err Error) LengthRule {
 	r.err = err

@@ -47,7 +47,13 @@ func (r DateRule) Error(message string) DateRule {
 	return r
 }
 
-// ErrorObject sets the error struct that is used when the value being validated is not a valid date..
+// Error sets the error code that is used when the value being validated is not a valid date.
+func (r DateRule) ErrorCode(code string) DateRule {
+	r.err = r.err.SetCode(code)
+	return r
+}
+
+// ErrorObject sets the error struct that is used when the value being validated is not a valid date.
 func (r DateRule) ErrorObject(err Error) DateRule {
 	r.err = err
 	return r
@@ -56,6 +62,12 @@ func (r DateRule) ErrorObject(err Error) DateRule {
 // RangeError sets the error message that is used when the value being validated is out of the specified Min/Max date range.
 func (r DateRule) RangeError(message string) DateRule {
 	r.rangeErr = r.rangeErr.SetMessage(message)
+	return r
+}
+
+// RangeError sets the error code that is used when the value being validated is out of the specified Min/Max date range.
+func (r DateRule) RangeErrorCode(code string) DateRule {
+	r.rangeErr = r.rangeErr.SetCode(code)
 	return r
 }
 

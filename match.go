@@ -49,6 +49,12 @@ func (r MatchRule) Error(message string) MatchRule {
 	return r
 }
 
+// Error sets the error code for the rule.
+func (r MatchRule) ErrorCode(code string) MatchRule {
+	r.err = r.err.SetCode(code)
+	return r
+}
+
 // ErrorObject sets the error struct for the rule.
 func (r MatchRule) ErrorObject(err Error) MatchRule {
 	r.err = err

@@ -37,6 +37,15 @@ func (r notNilRule) Error(message string) notNilRule {
 	return r
 }
 
+// ErrorCode sets the error code for the rule.
+func (r notNilRule) ErrorCode(code string) notNilRule {
+	if r.err == nil {
+		r.err = ErrNotNilRequired
+	}
+	r.err = r.err.SetCode(code)
+	return r
+}
+
 // ErrorObject sets the error struct for the rule.
 func (r notNilRule) ErrorObject(err Error) notNilRule {
 	r.err = err

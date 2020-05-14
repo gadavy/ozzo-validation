@@ -60,6 +60,19 @@ func (r absentRule) Error(message string) absentRule {
 	return r
 }
 
+// Error sets the error message for the rule.
+func (r absentRule) ErrorCode(code string) absentRule {
+	if r.err == nil {
+		if r.skipNil {
+			r.err = ErrEmpty
+		} else {
+			r.err = ErrNil
+		}
+	}
+	r.err = r.err.SetCode(code)
+	return r
+}
+
 // ErrorObject sets the error struct for the rule.
 func (r absentRule) ErrorObject(err Error) absentRule {
 	r.err = err

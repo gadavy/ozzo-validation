@@ -136,6 +136,12 @@ func (r ThresholdRule) Error(message string) ThresholdRule {
 	return r
 }
 
+// Error sets the error code for the rule.
+func (r ThresholdRule) ErrorCode(code string) ThresholdRule {
+	r.err = r.err.SetCode(code)
+	return r
+}
+
 // ErrorObject sets the error struct for the rule.
 func (r ThresholdRule) ErrorObject(err Error) ThresholdRule {
 	r.err = err

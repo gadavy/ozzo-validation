@@ -38,6 +38,12 @@ func (r StringRule) Error(message string) StringRule {
 	return r
 }
 
+// ErrorCode sets the error code for the rule.
+func (r StringRule) ErrorCode(code string) StringRule {
+	r.err = r.err.SetCode(code)
+	return r
+}
+
 // ErrorObject sets the error struct for the rule.
 func (r StringRule) ErrorObject(err Error) StringRule {
 	r.err = err

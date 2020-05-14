@@ -67,6 +67,19 @@ func (r RequiredRule) Error(message string) RequiredRule {
 	return r
 }
 
+// ErrorCode sets the error code for the rule.
+func (r RequiredRule) ErrorCode(code string) RequiredRule {
+	if r.err == nil {
+		if r.skipNil {
+			r.err = ErrNilOrNotEmpty
+		} else {
+			r.err = ErrRequired
+		}
+	}
+	r.err = r.err.SetCode(code)
+	return r
+}
+
 // ErrorObject sets the error struct for the rule.
 func (r RequiredRule) ErrorObject(err Error) RequiredRule {
 	r.err = err

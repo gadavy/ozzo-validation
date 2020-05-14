@@ -20,6 +20,7 @@ type (
 		Code() string
 		Message() string
 		SetMessage(string) Error
+		SetCode(string) Error
 		Params() map[string]interface{}
 		SetParams(map[string]interface{}) Error
 	}
