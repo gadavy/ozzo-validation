@@ -38,8 +38,8 @@ or `validation.ValidateStruct()` to validate the value.
 Run the following command to install the package:
 
 ```
-go get github.com/go-ozzo/ozzo-validation/v4
-go get github.com/go-ozzo/ozzo-validation/v4/is
+go get github.com/gadavy/ozzo-validation/v4
+go get github.com/gadavy/ozzo-validation/v4/is
 ```
 
 ### Validating a Simple Value
@@ -52,8 +52,8 @@ package main
 import (
 	"fmt"
 
-	"github.com/go-ozzo/ozzo-validation/v4"
-	"github.com/go-ozzo/ozzo-validation/v4/is"
+	"github.com/gadavy/ozzo-validation/v4"
+	"github.com/gadavy/ozzo-validation/v4/is"
 )
 
 func main() {
@@ -89,8 +89,8 @@ import (
 	"fmt"
 	"regexp"
 
-	"github.com/go-ozzo/ozzo-validation/v4"
-	"github.com/go-ozzo/ozzo-validation/v4/is"
+	"github.com/gadavy/ozzo-validation/v4"
+	"github.com/gadavy/ozzo-validation/v4/is"
 )
 
 type Address struct {
@@ -458,7 +458,7 @@ You can also customize the pre-defined error(s) of a built-in rule such that the
 instance of the rule. For example, the `Required` rule uses the pre-defined error `ErrRequired`. You can customize it
 during the application initialization:
 ```go
-import "github.com/go-ozzo/ozzo-validation/v4"
+import "github.com/gadavy/ozzo-validation/v4"
 
 validation.ErrRequired = validation.ErrRequired.SetMessage("the value is required") 
 ```
